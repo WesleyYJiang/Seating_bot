@@ -18,10 +18,10 @@ ex2 = importGuests('DS4300-Final-Project-Example-Data.csv')
 # test getParties
 print([i.party for i in ex2.guest_list])
 
+# test assign_by_party
 p1 = Plan(ex2, 3, 6, 5)
 print(p1.tables)
 p1.assign_by_party()
-
 
 for i in p1.tables[0].guests:
     print(i.name + " " + str(i.party))
