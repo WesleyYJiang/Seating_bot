@@ -11,6 +11,10 @@ class Table:
     """""
 
     def __init__(self, capacity):
+        """"Adds a guest to the tabble 
+
+            param guest: The guest to be added to this table 
+        """""
         # max number of people that can sit at a table
         self.capacity = capacity
         # current number of people sitting at the table
