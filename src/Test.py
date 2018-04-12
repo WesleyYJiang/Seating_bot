@@ -18,21 +18,19 @@ print(type(ex2) == Roster)
 print(type(ex2.guest_list[0]) == Guest)
 
 # test getParties
-print([i.party for i in ex2.guest_list])
+p = [i.party for i in ex2.guest_list]
+print(len(p) == 18)
+print(type(p[0]) == int)
 
 # test assign_by_party
 p1 = Plan(ex2, 3, 6, [Objective_age])
-print(p1.tables)
+print(len(p1.tables) == 3)
+print(p1.tables[0].capacity == 6)
 p1.assign_by_party()
 
-for i in p1.tables[0].guests:
-    print(i.name + " " + str(i.party))
-print("***********************")
-for i in p1.tables[1].guests:
-    print(i.name + " " + str(i.party))
-print("***********************")
-for i in p1.tables[2].guests:
-    print(i.name + " " + str(i.party))
+for i in range(3):
+    print(len(p1.tables[i].guests) <= p1.tables[i].capacity)
+    print(len(p1.tables[i].guests) >= 0)
 
 # test ageVariance (Table)
 v = p1.tables[0].ageVariance()
@@ -49,3 +47,6 @@ print(v > 0)
 v = p1.evaluate()
 print(type(v) == np.float64)
 print(v > 0)
+
+# test boyGirl (Table)
+p1.tables[0]
