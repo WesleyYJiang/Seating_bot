@@ -1,6 +1,6 @@
 import pandas as pd
-from Guest import Guest
-from Roster import Roster
+from src.Guest import Guest
+from src.Roster import Roster
 
 # import Guests from csv
 def importGuests(path):

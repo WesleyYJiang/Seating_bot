@@ -1,5 +1,5 @@
 import numpy as np
-import Guest as Guest
+
 
 class Table:
     """"Represents all seats and people at a table
@@ -55,8 +55,3 @@ class Table:
             if (genders[i] == genders[i + 1]):
                 counter += 2  # since you count both elements
         return counter
-
-#
-# t = Table(3)
-# t.addGuest(Guest)
-# print(t.boyGirl())

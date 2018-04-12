@@ -1,6 +1,6 @@
 import random
-from Guest import Guest
-from Roster import Roster
+from src.Guest import Guest
+from src.Roster import Roster
 
 # generates a random roster with the desired number of rows
 def dataGenerator(numRows):

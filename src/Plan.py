@@ -1,6 +1,4 @@
-from Roster import Roster
-from Table import Table
-from Make_plan import importGuests
+from src.Table import Table
 
 
 class Plan:
@@ -33,9 +31,10 @@ class Plan:
             tables.append(Table(t_cap))
         return tables
 
-    # evaluates plan based on objectives
     def evaluate(self):
-        return (sum([i.evaluate(self) for i in self.objectives]))
+        """ Evaluates plan based on objectives
+        """
+        return (sum([i.evaluate(i, self) for i in self.objectives]))
 
     def nxt_avail(self, guest):
         """Search for the next available seat out of all the tables and assigns the guest to the seat. 
