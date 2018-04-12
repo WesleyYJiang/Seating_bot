@@ -27,3 +27,4 @@ def dataGenerator(numRows):
 
     # return a roster with the guest list
     return (Roster(guestlist))
+
