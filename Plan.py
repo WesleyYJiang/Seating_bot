@@ -35,6 +35,6 @@ class Plan:
 
     # Sit all the guests together by parties
     def assign_by_party(self):
-        for guests in self.roster.party_to_guests().ititervalues():
-            for g in guests:
+        for k, v in self.roster.party_to_guests().items():
+            for g in v:
                 self.nxt_avail(g)

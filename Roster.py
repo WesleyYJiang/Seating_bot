@@ -29,7 +29,7 @@ class Roster(object):
         map = { }
     # initialize the dictionary with parties as key and empty list of guests
         for p in self.getParties():
-            map.update({p, []})
+            map.update({p: []})
     # add guests to each party
         for g in self.guest_list:
             map[g.party].append(g)

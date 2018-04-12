@@ -21,4 +21,13 @@ print([i.party for i in ex2.guest_list])
 p1 = Plan(ex2, 3, 6, 5)
 print(p1.tables)
 p1.assign_by_party()
-print(p1.tables[1].guests)
+
+
+for i in p1.tables[0].guests:
+    print(i.name + " " + str(i.party))
+print("***********************")
+for i in p1.tables[1].guests:
+    print(i.name + " " + str(i.party))
+print("***********************")
+for i in p1.tables[2].guests:
+    print(i.name + " " + str(i.party))
