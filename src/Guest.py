@@ -28,3 +28,19 @@ class Guest:
         self.inclusion = []
         self.exclusion = []
         self.categories = []
+
+    def info(self):
+        """Makes an a dictionary of the guest and the information 
+    
+        :return: a dictionary of all the guest information 
+        """
+        return {
+            'name' : self.name,
+            'age' : self.age,
+            'gender' : self.gender,
+            'party' : self.party,
+            'college' : self.college,
+            'occupation' : self.occupation,
+            'residence' : self.residence,
+            'connection' : self.connection
+        }

@@ -53,5 +53,15 @@ class Table:
         counter = 0
         for i in range(len(genders) - 1):
             if (genders[i] == genders[i + 1]):
-                counter += 2  # since you count both elements
+                counter += 2  #since you count both elements
         return counter
+
+    def info(self):
+        """Makes an a dictionary of guests (guests are dictionaries containing all the information)
+
+        :return: a dictionary of all the guests
+        """
+        result = {}
+        for g in self.guests:
+            result.update({g.name : g.info()})
+        return result

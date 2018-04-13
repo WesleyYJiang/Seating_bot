@@ -39,14 +39,18 @@ print(v > 0)
 
 # test evaluate (Objective_age)
 o = Objective_age
-v = o.evaluate(o,p1)
-print(type(v) == np.float64)
-print(v > 0)
+
+print(p1.evaluate())
+
+# v = o.evaluate(o,p1)
+# print(type(v) == np.float64)
+# print(v > 0)
 
 # test evaluate (Plan)
-v = p1.evaluate()
-print(type(v) == np.float64)
-print(v > 0)
+# v = p1.evaluate()
+# print(type(v) == np.float64)
+# print(v > 0)
+# print(p1.info())
 
 # test boyGirl (Table)
-p1.tables[0]
+# p1.tables[0]

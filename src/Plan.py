@@ -34,7 +34,12 @@ class Plan:
     def evaluate(self):
         """ Evaluates plan based on objectives
         """
-        return (sum([i.evaluate(i, self) for i in self.objectives]))
+        num = 0
+        for obj in self.objectives:
+            self.scores.update({num : obj.evaluate(obj, self)})
+            num += 1
+        return self.scores
+        #return (sum([i.evaluate(i, self) for i in self.objectives]))
 
     def nxt_avail(self, guest):
         """Search for the next available seat out of all the tables and assigns the guest to the seat. 
@@ -54,3 +59,15 @@ class Plan:
         for k, v in self.roster.party_to_guests().items():
             for g in v:
                 self.nxt_avail(g)
+
+    def info(self):
+        result = {}
+        guests = {}
+        count = 0
+        for t in self.tables:
+            guests.update({count : t.info()})
+            count += 1
+        result.update({"Seating" : guests})
+
+        return result
+
