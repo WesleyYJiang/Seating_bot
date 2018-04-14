@@ -43,6 +43,8 @@ class Table:
 
     # calculate variance of ages at the table
     def ageVariance(self):
+        if(len(self.guests) == 0):
+            return 0
         ages = [i.age for i in self.guests]
         var = np.var(ages)
         return var

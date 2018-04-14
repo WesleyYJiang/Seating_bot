@@ -19,6 +19,7 @@ class Plan:
         self.tables = self.createTables(num_t, t_cap)
         self.objectives = objectives
         self.scores = {}
+        self.assign_by_party()
 
     def createTables(self, num_t, t_cap):
         """Initialize a list of tables with a given number of tables and capacity per table
@@ -54,7 +55,7 @@ class Plan:
 
     # Sit all the guests together by parties
     def assign_by_party(self):
-        """Assigns all the guests to into their initial seats and sit them together according to their parties. 
+        """Assigns all the guests to into their initial seats and sit them together according to their parties.
         """
         for k, v in self.roster.party_to_guests().items():
             for g in v:
