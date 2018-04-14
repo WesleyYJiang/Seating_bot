@@ -12,7 +12,7 @@ client = MongoClient()
 db = client.solutions
 
 # import Guests from csv
-def importGuests(path):
+def import_guests(path):
     df = pandas.read_csv(path)
     guests = []
     for index, row in df.iterrows():

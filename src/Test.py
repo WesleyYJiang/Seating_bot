@@ -1,4 +1,4 @@
-from src.Data_generator import dataGenerator
+from src.Data_generator import data_generator
 from src.Guest import Guest
 from src.Roster import Roster
 from src.Make_plan import importGuests
@@ -7,7 +7,7 @@ from src.Objective_age import Objective_age
 import numpy as np
 
 # test datagenerator
-ex1 = dataGenerator(5)
+ex1 = data_generator(5)
 print(len(ex1.guest_list) == 5)
 print(type(ex1.guest_list[0]) == Guest)
 

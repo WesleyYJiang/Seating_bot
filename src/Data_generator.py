@@ -3,7 +3,7 @@ from src.Guest import Guest
 from src.Roster import Roster
 
 # generates a random roster with the desired number of rows
-def dataGenerator(numRows):
+def data_generator(numRows):
 
     # sample data
     names = ['Tim', 'Wes', 'John', 'Dan', 'Eddie']
