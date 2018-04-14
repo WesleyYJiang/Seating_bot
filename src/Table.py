@@ -1,6 +1,5 @@
 import numpy as np
 
-
 class Table:
     """"Represents all seats and people at a table
 
@@ -42,7 +41,7 @@ class Table:
         return self.size == self.capacity
 
     # calculate variance of ages at the table
-    def ageVariance(self):
+    def age_variance(self):
         if(len(self.guests) == 0):
             return 0
         ages = [i.age for i in self.guests]
@@ -50,12 +49,15 @@ class Table:
         return var
 
     # calculate score for BoyGirl Objective
-    def boyGirl(self):
+    def boy_girl(self):
         genders = [i.gender for i in self.guests]
         counter = 0
-        for i in range(len(genders) - 1):
-            if (genders[i] == genders[i + 1]):
-                counter += 2  #since you count both elements
+        for i in range(len(genders)):
+            if(i == len(genders) - 1):
+                if(genders[i] == genders[0] or genders[i-1] == genders[i]):
+                    counter += 1
+            elif (genders[i] == genders[i + 1] or genders[i-1] == genders[i]):
+                counter += 1
         return counter
 
     def info(self):

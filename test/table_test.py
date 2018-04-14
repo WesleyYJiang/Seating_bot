@@ -38,15 +38,15 @@ class TestingTables(unittest.TestCase):
             self.assertLessEqual(len(p1.tables[i].guests), p1.tables[i].capacity)
             self.assertGreaterEqual(len(p1.tables[i].guests), 0)
 
-    def test_ageVariance(self):
+    def test_age_variance(self):
         ex2 = import_guests('DS4300-Final-Project-Example-Data.csv')
         p1 = Plan(ex2, 3, 6, [Objective_age])
         for i in p1.tables:
-            v = i.ageVariance()
+            v = i.age_variance()
             self.assertEqual(type(v), np.float64)
             self.assertGreaterEqual(v, 0)
         t = Table(5)
-        self.assertEqual(t.ageVariance(), 0)
+        self.assertEqual(t.age_variance(), 0)
 
     def test_objective_age(self):
         ex2 = import_guests('DS4300-Final-Project-Example-Data.csv')
@@ -61,6 +61,12 @@ class TestingTables(unittest.TestCase):
         p1 = Plan(ex2, 3, 6, [Objective_age])
         v = p1.evaluate()
         self.assertEqual(type(v), dict)
+
+    def test_boy_girl(self):
+        ex2 = import_guests('DS4300-Final-Project-Example-Data.csv')
+        p1 = Plan(ex2, 3, 6, [Objective_age])
+        self.assertEqual(p1.tables[0].boy_girl(), 6)
+
 
 if __name__ == '__main__':
     unittest.main()

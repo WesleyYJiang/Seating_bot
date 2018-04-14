@@ -8,8 +8,6 @@ class Roster(object):
         self.sortGuestList()
         self.parties = self.getParties()
 
-
-
     def swapRandom(self):
         idx = range(len(self.guest_list))
         i1, i2 = random.sample(idx,2)
