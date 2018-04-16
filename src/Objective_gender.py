@@ -1,7 +1,8 @@
 import numpy as np
 
-# objective that evaluates how often a girl is sitting next to a boy and vice versa
 class Objective_gender:
+    """The objective that evaluates how often a guest is sitting next to someone of the same gender, used in a Plan
+    """
 
     def __init__(self):
         self.name = 'gender'

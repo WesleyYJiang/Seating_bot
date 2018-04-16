@@ -1,7 +1,8 @@
 import numpy as np
 
-# objective that evaluates how often a girl is sitting next to a boy and vice versa
 class Objective_party:
+    """The objective that tries to minimize number of parties at a table, can be used in a Plan
+    """
 
     def __init__(self):
         self.name = 'party'

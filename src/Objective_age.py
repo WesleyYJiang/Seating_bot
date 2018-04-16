@@ -1,7 +1,8 @@
 import numpy as np
 
-
 class Objective_age:
+    """The objective that tries to minimize age, can be used in a Plan
+    """
 
     def __init__(self):
         self.name = "age"
