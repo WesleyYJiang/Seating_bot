@@ -5,6 +5,7 @@ from src.Roster import Roster
 from src.Make_plan import import_guests
 from src.Plan import Plan
 from src.Objective_age import Objective_age
+from src.Objective_gender import Objective_gender
 from src.Table import Table
 import numpy as np
 import pymongo
@@ -58,8 +59,9 @@ class TestingTables(unittest.TestCase):
 
     def test_plan_evaluate(self):
         ex2 = import_guests('DS4300-Final-Project-Example-Data.csv')
-        p1 = Plan(ex2, 3, 6, [Objective_age])
+        p1 = Plan(ex2, 3, 6, [Objective_age(), Objective_gender()])
         v = p1.evaluate()
+        print(v)
         self.assertEqual(type(v), dict)
 
     def test_boy_girl(self):
