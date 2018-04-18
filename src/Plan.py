@@ -71,9 +71,6 @@ class Plan:
         for i in self.tables:
             i.guests = []
 
-
-
-
     def info(self):
         result = {}
         guests = {}

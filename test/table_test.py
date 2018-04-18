@@ -76,5 +76,30 @@ class TestingTables(unittest.TestCase):
         p1 = Plan(ex2, 3, 6, [Objective_age])
         self.assertEqual(p1.tables[0].boy_girl(), 6)
 
+    def test_swapper(self):
+        ex2 = import_guests('DS4300-Final-Project-Example-Data.csv')
+        p1 = Plan(ex2, 3, 6, [Objective_age(), Objective_gender(), Objective_party(), Objective_college(),
+                              Objective_occupation(), Objective_connection()])
+        w = Working_agent(p1)
+
+        for i in w.p.tables:
+            print([t.name for t in i.guests])
+        w.random_swap()
+        for i in w.p.tables:
+            print([t.name for t in i.guests])
+
+        '''for t in range(0,len(t1)):
+            names1 = [i.name for i in t1[t].guests]
+            print(names1)
+        for t in range(0,len(t2)):
+            names2 = [i.name for i in t2[t].guests]
+            print(names2)'''
+
+        '''bool = False
+        for t in range(0,len(w.p.tables)):
+            if w1.p.tables[t].guests != w2.p.tables[t].guests:
+                bool = True
+        self.assertEqual(bool, True)'''
+
 if __name__ == '__main__':
     unittest.main()
