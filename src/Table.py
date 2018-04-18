@@ -76,6 +76,47 @@ class Table:
         parties = [i.party for i in self.guests]
         return math.pow(len(set(parties)),2)
 
+    def college_score(self):
+        """returns the college_score for the table
+
+        :return: the number of unique colleges attended at the table
+        """
+        colleges = [i.college for i in self.guests]
+        return math.pow(len(set(colleges)),2)
+
+    def occupation_score(self):
+        """returns the occupation_score for the table
+
+        :return: the number of unique occupations attended at the table
+        """
+        occupations = [i.occupation for i in self.guests]
+        return math.pow(len(set(occupations)),2)
+
+        # calculate score for boy_girl Objective
+    def connection_score(self):
+        """returns the connection score for the table
+
+        :return: the number of guests at the table that are sitting next to someone who has the same connection
+        """
+        connections = [i.connection for i in self.guests]
+        counter = 0
+        for i in range(len(connections)):
+            if (i == len(connections) - 1):
+                if((connections[i-1]=='Both' and connections[i] == 'Both') or
+                        (connections[i] == 'Both' and connections[0] == 'Both')):
+                    counter -= 1
+                if not(connections[i] == connections[0] or connections[i - 1] == connections[i]
+                        or connections[0] == 'Both' or connections[i] == 'Both' or connections[i-1] == 'Both'):
+                    counter += 1
+            else:
+                if((connections[i-1] == 'Both' and connections[i] == 'Both') or
+                  (connections[i] == 'Both' and connections[i+1] == 'Both')):
+                    counter -= 1
+                if not(connections[i] == connections[i + 1] or connections[i - 1] == connections[i]
+                        or connections[i-1] == 'Both' or connections[i] == 'Both' or connections[i+1] == 'Both'):
+                    counter += 1
+        return counter
+
     def info(self):
         """Makes an a dictionary of guests (guests are dictionaries containing all the information)
 

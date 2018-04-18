@@ -7,6 +7,9 @@ from src.Plan import Plan
 from src.Objective_age import Objective_age
 from src.Objective_gender import Objective_gender
 from src.Objective_party import Objective_party
+from src.Objective_college import Objective_college
+from src.Objective_occupation import Objective_occupation
+from src.Objective_connection import Objective_connection
 from src.Table import Table
 import numpy as np
 import pymongo
@@ -60,7 +63,8 @@ class TestingTables(unittest.TestCase):
 
     def test_plan_evaluate(self):
         ex2 = import_guests('DS4300-Final-Project-Example-Data.csv')
-        p1 = Plan(ex2, 3, 6, [Objective_age(), Objective_gender(), Objective_party()])
+        p1 = Plan(ex2, 3, 6, [Objective_age(), Objective_gender(), Objective_party(), Objective_college(),
+                              Objective_occupation(), Objective_connection()])
         v = p1.evaluate()
         print(v)
         self.assertEqual(type(v), dict)
