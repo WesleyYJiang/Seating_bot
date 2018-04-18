@@ -22,7 +22,7 @@ class Working_agent:
         self.p.tables[rand_t_1].guests.insert(rand_s_1, g2)
         self.p.tables[rand_t_2].guests.insert(rand_s_2, g1)
 
-    def swap_within_table(self, tNum):
+    def rand_swap_within_table(self, tNum):
         rand_s_1 = self.rand_seat(tNum)
         rand_s_2 = self.rand_seat(tNum)
         while rand_s_1 == rand_s_2:
