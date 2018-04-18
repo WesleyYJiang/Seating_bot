@@ -7,9 +7,7 @@ from src.Plan import Plan
 import pandas
 import pymongo
 from pymongo import MongoClient
-
-client = MongoClient()
-db = client.solutions
+from src.Work_agent import Working_agent
 
 # import Guests from csv
 def import_guests(path):
@@ -22,8 +20,32 @@ def import_guests(path):
     guest_book = Roster(guests)
     return guest_book
 
+def dominated(plan1, plan2):
+    for key, value in plan1.items():
+        if value > plan2[key]:
+            return True
+    return False
+
+# client = MongoClient()
+# db = client.plans
+# solutions = db.solutions
 # obj1 = Objective_gender()
 # obj2 = Objective_age()
-# og_plan = Plan(importGuests(" "), 3, 5, [obj1, obj2])
-# db.insert(og_plan)
+# og_plan = Plan(import_guests("/Users/wesleyjiang/Documents/GitHub"
+#                              "/Seating_bot/test/DS4300-Final-Project-Example-Data.csv"), 3, 5, [obj1, obj2])
 #
+# print(og_plan.info())
+#
+# solutions.insert({'hi': 1})
+
+# work = Working_agent(og_plan)
+#
+# for i in range(5):
+#     work.random_swap()
+#     for document in solutions.find():
+#         print(document)
+        # if not dominated(work.p.scores):
+        #     db.insert(work.p)
+
+
+
