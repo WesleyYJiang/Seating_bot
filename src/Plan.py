@@ -58,11 +58,18 @@ class Plan:
         for k, v in self.roster.party_to_guests().items():
             for g in v:
                 self.nxt_avail(g)
-    def random_swap(self):
-        rand_t_1 = random.randint(0,len(self.tables))
-        rand_g_1 = self.tables[rand_t_1][random.randint(0, len(self.tables[rand_t_1]))]
-        rand_t_2 = random.randint(0,len(self.tables))
-        rand_g_2 = self.tables[rand_t_2][random.randint(0, len(self.tables[rand_t_2]))]
+
+    def assign_random(self):
+        for g in self.roster.guest_list:
+            for t in random.shuffle(self.tables):
+                table = self.tables[t]
+                if(table.capacity > table.size):
+                    table.addGuest(g)
+                    break
+
+    def clearTables(self):
+        for i in self.tables:
+            i.guests = []
 
 
 

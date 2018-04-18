@@ -31,3 +31,7 @@ class Working_agent:
         g2 = self.p.tables[tNum].guests[rand_s_2]
         self.p.tables[tNum].guests.insert(rand_s_1, g2)
         self.p.tables[tNum].guests.insert(rand_s_2, g1)
+
+    def shuffle_guests(self):
+        self.plan.clearTables()
+        self.plan.assign_random()

@@ -23,7 +23,7 @@ class Table:
 
 
     def addGuest(self, guest):
-        """Adds a guest to the tabble
+        """Adds a guest to the table
 
             param guest: The guest to be added to this table 
         """
