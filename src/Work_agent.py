@@ -6,9 +6,9 @@ class Working_agent:
         self.p = plan
 
     def rand_t(self):
-        return random.randint(0, len(self.p.tables))
+        return random.randint(0, len(self.p.tables) - 1)
     def rand_seat(self, t):
-        return self.p.tables[t][random.randint(0, len(self.p.tables[t]))]
+        return random.randint(0, self.p.tables[t].size - 1)
 
     def random_swap(self):
         rand_t_1 = self.rand_t()

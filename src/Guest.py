@@ -1,3 +1,5 @@
+import random
+
 class Guest:
     """""Represents an individual guest, contains all demographic details as fields
     
