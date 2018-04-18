@@ -81,25 +81,17 @@ class TestingTables(unittest.TestCase):
         p1 = Plan(ex2, 3, 6, [Objective_age(), Objective_gender(), Objective_party(), Objective_college(),
                               Objective_occupation(), Objective_connection()])
         w = Working_agent(p1)
-
-        for i in w.p.tables:
-            print([t.name for t in i.guests])
+        g1 = []
+        for t in w.p.tables:
+            for g in t.guests:
+                g1.append(g.name)
         w.random_swap()
-        for i in w.p.tables:
-            print([t.name for t in i.guests])
+        g2 = []
+        for t in w.p.tables:
+            for g in t.guests:
+                g2.append(g.name)
 
-        '''for t in range(0,len(t1)):
-            names1 = [i.name for i in t1[t].guests]
-            print(names1)
-        for t in range(0,len(t2)):
-            names2 = [i.name for i in t2[t].guests]
-            print(names2)'''
-
-        '''bool = False
-        for t in range(0,len(w.p.tables)):
-            if w1.p.tables[t].guests != w2.p.tables[t].guests:
-                bool = True
-        self.assertEqual(bool, True)'''
+        self.assertNotEquals(g1,g2)
 
 if __name__ == '__main__':
     unittest.main()
