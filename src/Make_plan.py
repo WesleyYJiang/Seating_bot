@@ -32,13 +32,13 @@ db = client.plans
 solutions = db.solutions
 obj1 = Objective_gender()
 obj2 = Objective_age()
-og_plan = Plan(import_guests("/Users/wesleyjiang/Documents/GitHub"
-                             "/Seating_bot/test/DS4300-Final-Project-Example-Data.csv"), 3, 5, [obj1, obj2])
+og_plan = Plan(import_guests("DS4300-Final-Project-Example-Data.csv"), 3, 5, [obj1, obj2])
 
 #print(og_plan.info())
 
 work = Working_agent(og_plan)
 
+#solutions.delete_many({})
 
 for i in range(5):
     work.random_swap()

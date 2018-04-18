@@ -122,7 +122,12 @@ class Table:
 
         :return: a dictionary of all the guests
         """
-        result = {}
+        # result = {}
+        # for g in self.guests:
+        #     result.update({g.name : g.info()})
+        # return result
+        result = ""
         for g in self.guests:
-            result.update({g.name : g.info()})
+            result = result + ',' + g.name
         return result
+
