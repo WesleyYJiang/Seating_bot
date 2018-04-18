@@ -49,7 +49,7 @@ class Table:
         if(len(self.guests) == 0):
             return 0
         ages = [i.age for i in self.guests]
-        var = np.var(ages)
+        var = np.float64(math.sqrt(np.var(ages)))
         return var
 
     # calculate score for boy_girl Objective

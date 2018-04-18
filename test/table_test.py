@@ -48,6 +48,7 @@ class TestingTables(unittest.TestCase):
         p1 = Plan(ex2, 3, 6, [Objective_age])
         for i in p1.tables:
             v = i.age_variance()
+            print(type(v))
             self.assertEqual(type(v), np.float64)
             self.assertGreaterEqual(v, 0)
         t = Table(5)
