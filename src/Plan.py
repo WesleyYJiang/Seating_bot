@@ -78,6 +78,7 @@ class Plan:
         for t in self.tables:
             guests.update({count : t.info()})
             count += 1
+        result.update({"Scores": self.evaluate()})
         result.update({"Seating" : guests})
 
         return result
