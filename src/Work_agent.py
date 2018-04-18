@@ -17,8 +17,8 @@ class Working_agent:
         rand_s_2 = self.rand_seat(rand_t_2)
         while rand_s_1 == rand_s_2 and rand_t_1 == rand_t_2:
             rand_2 = self.rand_seat(self.rand_t())
-        g1 = self.p.tables[rand_t_1].guests[rand_s_1]
-        g2 = self.p.tables[rand_t_2].guests[rand_s_2]
+        g1 = self.p.tables[rand_t_1].guests.pop(rand_s_1)
+        g2 = self.p.tables[rand_t_2].guests.pop(rand_s_2)
         self.p.tables[rand_t_1].guests.insert(rand_s_1, g2)
         self.p.tables[rand_t_2].guests.insert(rand_s_2, g1)
 
