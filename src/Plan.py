@@ -1,4 +1,5 @@
 from src.Table import Table
+import random
 
 
 class Plan:
@@ -57,6 +58,14 @@ class Plan:
         for k, v in self.roster.party_to_guests().items():
             for g in v:
                 self.nxt_avail(g)
+    def random_swap(self):
+        rand_t_1 = random.randint(0,len(self.tables))
+        rand_g_1 = self.tables[rand_t_1][random.randint(0, len(self.tables[rand_t_1]))]
+        rand_t_2 = random.randint(0,len(self.tables))
+        rand_g_2 = self.tables[rand_t_2][random.randint(0, len(self.tables[rand_t_2]))]
+
+
+
 
     def info(self):
         result = {}
