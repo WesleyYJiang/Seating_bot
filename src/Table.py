@@ -41,16 +41,13 @@ class Table:
         """
         return self.size == self.capacity
 
-    def age_variance(self):
-        """returns the age_variance for the table
+    def age_score(self):
+        """returns the age_score for the table
 
-        :return: variance of the ages of the guests at the table
+        :return: the square of the number of age groups at the table
         """
-        if(len(self.guests) == 0):
-            return 0
         ages = [i.age for i in self.guests]
-        var = np.float64(math.sqrt(np.var(ages)))
-        return var
+        return np.float64(math.pow(len(set(ages)),2))
 
     # calculate score for boy_girl Objective
     def boy_girl(self):
@@ -102,18 +99,18 @@ class Table:
         counter = 0
         for i in range(len(connections)):
             if (i == len(connections) - 1):
-                if((connections[i-1]=='Both' and connections[i] == 'Both') or
-                        (connections[i] == 'Both' and connections[0] == 'Both')):
+                if((connections[i-1]=='both' and connections[i] == 'both') or
+                        (connections[i] == 'both' and connections[0] == 'both')):
                     counter -= 1
                 if not(connections[i] == connections[0] or connections[i - 1] == connections[i]
-                        or connections[0] == 'Both' or connections[i] == 'Both' or connections[i-1] == 'Both'):
+                        or connections[0] == 'both' or connections[i] == 'both' or connections[i-1] == 'both'):
                     counter += 1
             else:
-                if((connections[i-1] == 'Both' and connections[i] == 'Both') or
-                  (connections[i] == 'Both' and connections[i+1] == 'Both')):
+                if((connections[i-1] == 'both' and connections[i] == 'both') or
+                  (connections[i] == 'both' and connections[i+1] == 'both')):
                     counter -= 1
                 if not(connections[i] == connections[i + 1] or connections[i - 1] == connections[i]
-                        or connections[i-1] == 'Both' or connections[i] == 'Both' or connections[i+1] == 'Both'):
+                        or connections[i-1] == 'both' or connections[i] == 'both' or connections[i+1] == 'both'):
                     counter += 1
         return counter
 
