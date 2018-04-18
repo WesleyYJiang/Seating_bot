@@ -7,7 +7,7 @@ def data_generator(numRows):
 
     # sample data
     names = ['Tim', 'Wes', 'John', 'Dan', 'Eddie']
-    ages = range(18,80)
+    ages = ['child', 'teenager', 'young adult', 'adult', 'senior']
     genders = ['male', 'female']
     parties = range(1, numRows//2)
     residences = ['Boston', 'Roxbury', 'Cali', 'Connecticut', 'Shenzen']
