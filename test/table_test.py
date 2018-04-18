@@ -24,14 +24,15 @@ class TestingTables(unittest.TestCase):
 
     def test_import_guests(self):
         ex2 = import_guests('DS4300-Final-Project-Example-Data.csv')
-        self.assertEqual(len(ex2.guest_list), 18)
+        self.assertEqual(len(ex2.guest_list), 19)
         self.assertEqual(type(ex2), Roster)
         self.assertEqual(type(ex2.guest_list[0]), Guest)
 
     def test_get_parties(self):
         ex2 = import_guests('DS4300-Final-Project-Example-Data.csv')
         p = [i.party for i in ex2.guest_list]
-        self.assertEqual(len(p), 18)
+        self.assertEqual(len(p), 19)
+        print(p)
         self.assertEqual(type(p[0]), int)
 
     def test_assign_by_party(self):
@@ -44,16 +45,16 @@ class TestingTables(unittest.TestCase):
             self.assertLessEqual(len(p1.tables[i].guests), p1.tables[i].capacity)
             self.assertGreaterEqual(len(p1.tables[i].guests), 0)
 
-    def test_age_variance(self):
+    def test_age_score(self):
         ex2 = import_guests('DS4300-Final-Project-Example-Data.csv')
         p1 = Plan(ex2, 3, 6, [Objective_age])
         for i in p1.tables:
-            v = i.age_variance()
+            v = i.age_score()
             print(type(v))
             self.assertEqual(type(v), np.float64)
             self.assertGreaterEqual(v, 0)
         t = Table(5)
-        self.assertEqual(t.age_variance(), 0)
+        self.assertEqual(t.age_score(), 0)
 
     def test_objective_age(self):
         ex2 = import_guests('DS4300-Final-Project-Example-Data.csv')
@@ -91,7 +92,7 @@ class TestingTables(unittest.TestCase):
             for g in t.guests:
                 g2.append(g.name)
 
-        self.assertNotEquals(g1,g2)
+        self.assertNotEqual(g1,g2)
 
 if __name__ == '__main__':
     unittest.main()
