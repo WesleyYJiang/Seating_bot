@@ -37,7 +37,7 @@ class Plan:
         """ Evaluates plan based on objectives
         """
         for obj in self.objectives:
-            self.scores.update({obj.name : obj.evaluate(self)})
+            self.scores.update({obj.name : round(obj.evaluate(self),3)})
         return self.scores
 
     def nxt_avail(self, guest):

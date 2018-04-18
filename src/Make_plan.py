@@ -45,7 +45,7 @@ work = Working_agent(og_plan)
 
 #solutions.delete_many({})
 
-for i in range(10000):
+for i in range(100):
     work.random_swap()
     sol_1 = work.p.info()['Scores']
     to_insert = False
