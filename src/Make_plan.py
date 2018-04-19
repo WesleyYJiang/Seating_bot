@@ -56,6 +56,7 @@ solutions.delete_many({})
 solutions.insert(og_plan.info())
 work = Working_agent(og_plan)
 
+
 for i in range(10000):
     # print("****************************ROUND***************************")
     # for document in solutions.find():
