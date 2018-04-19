@@ -51,7 +51,7 @@ class TestingTables(unittest.TestCase):
         for i in p1.tables:
             v = i.age_score()
             print(type(v))
-            self.assertEqual(type(v), np.float64)
+            self.assertEqual(type(v), float)
             self.assertGreaterEqual(v, 0)
         t = Table(5)
         self.assertEqual(t.age_score(), 0)
@@ -93,6 +93,8 @@ class TestingTables(unittest.TestCase):
                 g2.append(g.name)
 
         self.assertNotEqual(g1,g2)
+
+
 
 if __name__ == '__main__':
     unittest.main()

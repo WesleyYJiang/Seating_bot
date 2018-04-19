@@ -1,20 +1,20 @@
 name,age,gender,party,residence,college,occupation,connection
 Tim,young adult,female,2,Boston,Northeastern,Data Scientist,Bride
-John,young adult,male,3,Roxbury,BU,Bio Engineer,Groom
+John,young adult,male,3,Roxbury,BU,,Groom
 Wesley,young adult,female,4,Connecticut,Harvard,Professor,both
 Dan,young adult,female,2,Shenzen,MIT,Businessman,Groom
 Mike,young adult,male,2,Boston,Northeastern,Bio Engineer,Groom
 Brad,young adult,male,1,Shenzen,Northeastern,Bio Engineer,both
-Steve,young adult,female,3,Shenzen,MIT,Businessman,Groom
+Steve,young adult,female,3,Shenzen,MIT,,Groom
 Parker,young adult,female,4,Shenzen,MIT,Businessman,both
 Spencer,adult,male,2,Boston,MIT,Bio Engineer,Groom
 Julia,adult,female,1,Shenzen,MIT,Businessman,both
 Sarah,adult,male,3,Boston,MIT,Businessman,Groom
-Emily,adult,female,4,Shenzen,MIT,Businessman,Groom
-Allie,adult,female,5,Boston,MIT,Businessman,both
+Emily,adult,female,4,Shenzen,MIT,,Groom
+Allie,adult,female,5,Boston,MIT,,both
 Rose,adult,female,5,Boston,MIT,Businessman,both
 Amelia,senior,male,3,Shenzen,MIT,Businessman,both
-Sofia,senior,male,2,Boston,MIT,Businessman,both
+Sofia,senior,male,2,Boston,MIT,,both
 Leah,teenager,female,3,Boston,MIT,Businessman,both
 Victoria,teenager,female,4,Boston,MIT,Businessman,both
-Victoria,teenager,female,4,Boston,MIT,Businessman,both
+Victoria,teenager,female,4,Boston,MIT,,both
