@@ -28,6 +28,13 @@ class TestingTables(unittest.TestCase):
         self.assertEqual(type(ex2), Roster)
         self.assertEqual(type(ex2.guest_list[0]), Guest)
 
+    def test_import_guests_leah_tim(self):
+        ex2 = import_guests('tim_leah_guests.csv')
+        print([i.age for i in ex2.guest_list])
+        self.assertEqual(len(ex2.guest_list), 81)
+        self.assertEqual(type(ex2), Roster)
+        self.assertEqual(type(ex2.guest_list[0]), Guest)
+
     def test_get_parties(self):
         ex2 = import_guests('DS4300-Final-Project-Example-Data.csv')
         p = [i.party for i in ex2.guest_list]
@@ -50,7 +57,6 @@ class TestingTables(unittest.TestCase):
         p1 = Plan(ex2, 3, 6, [Objective_age])
         for i in p1.tables:
             v = i.age_score()
-            print(type(v))
             self.assertEqual(type(v), float)
             self.assertGreaterEqual(v, 0)
         t = Table(5)

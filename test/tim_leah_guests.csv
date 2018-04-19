@@ -1,0 +1,82 @@
+name,age,gender,party,residence,college,occupation,connection
+Wesley Jiang,young adult,male,1,"Boston, MA",Northeastern University,data scientist,both
+Glenn Ma,young adult,male,1,"Boston, MA",Northeastern University,doctor,both
+James Calder,young adult,male,1,"Boston, MA",Northeastern University,physical therapist,both
+Brian Torsiello,young adult,male,1,"Boston, MA",Northeastern University,mechanical engineer,both
+Dan Colucci,young adult,male,1,"Boston, MA",Northeastern University,bio medical engineer,both
+Laurynn Smith,young adult,female,2,"Boston, MA",Northeastern University,nurse,both
+Victoria Faulisi,young adult,female,2,"Boston, MA",Northeastern University,nurse,both
+Jordan Lin,young adult,female,2,"Boston, MA",Northeastern University,psychologist,both
+Nina Mirzakashani,young adult,female,3,"Boston, MA",Northeastern University,neuroscientist,both
+Gabbi Lia,young adult,female,3,"Boston, MA",Northeastern University,lawyer,both
+Chris Risley,young adult,male,4,"Boston, MA",Northeastern University,software developer,both
+Cameron Bonora,young adult,male,4,"Boston, MA",Northeastern University,engineer,both
+Theeraphat Wangpattanakul,young adult,male,5,"Boston, MA",Northeastern University,actuarial scientist,both
+Matt Genereux,young adult,male,6,"Boston, MA",Northeastern University,physical therapist,both
+John Villaroel,young adult,male,6,"Boston, MA",Northeastern University,physical therapist,both
+Eliza Schacht,adult,female,7,"Plympton, MA",Holyoke College,environmental engineer,both
+Gladys Schacht,senior,female,8,"Augusta, ME",,,groom
+Harry Schacht,senior,male,8,"Bangor, ME",,store manager,groom
+Kathleen Patin,senior,female,8,"Bangor, ME",University of Wisconsin Madison,,groom
+Diana Sauchuk,senior,female,9,"Danvers, MA",,,groom
+Dick Sauchuk,senior,male,9,"Danvers, MA",,,groom
+Sherri McNeilly,adult,female,10,"Beverly, MA",,,groom
+Jim McNeilly,adult,female,10,"Beverly, MA",,,groom
+Pauline Sylvester ,Adult ,Female,11,"Philadelphia, PA",,,both
+Victor Sylvester ,Adult,Male ,11,"Philadelphia, PA",,,both
+Jessica Sylvester ,teenager,Female ,11,"Philadelphia, PA",San Diego State University,nurse,both
+Lucille Sylvester ,Senior ,Female ,11,"Newburyport, MA",,,both
+Michelle Papanicolaou ,Adult ,Female ,12,"Newburyport, MA",,,both
+George Papanicolaou ,Adult ,Male ,12,"Newburyport, MA",,doctor,both
+Isabel Papanicolaou ,teenager,Female ,12,"Newburyport, MA",,,both
+Jacob Papanicolaou ,Young adult ,Male ,12,"Keene, NH",Keene State College,,both
+Zach Papanicolaou ,Young adult ,Male ,12,"Canton, MA",Curry College,,both
+Helen Papanicolaou ,Senior ,Female ,12,"Philadelphia, PA",,,bride
+Irene Papanicolaou ,Adult,Female ,12,"Philadelphia, PA",,,bride
+Lucille Gomez ,Senior ,Female ,13,"Bloomington, CA",,,bride
+Paul Gomez ,Senior ,Male,13,"Bloomington, CA",,,bride
+Caroline Avila ,Adult ,Female ,14,"Bloomington, CA",,,bride
+Dino Avila ,Adult ,Male ,14,"Bloomington, CA",,,bride
+Aaron Avila ,Adult ,Male ,14,"Bloomington, CA",,,bride
+Coleen Avila ,Adult ,Female ,14,"Bloomington, CA",,,bride
+Liz Ojieda ,Adult ,Female ,15,"San Bernardino, CA",,,bride
+Mario Ojieda ,Adult ,Male ,15,"San Bernardino, CA",,,bride
+Mario Jr Ojieda,Adult ,Male ,15,"San Bernardino, CA",,,bride
+Lauren Ojieda ,Young adult ,Female ,15,"San Bernardino, CA",,,bride
+Regina Gomez ,Adult ,Female ,16,"Riverside, CA",Acquinas University,,bride
+Gabby Torez ,Child,Female ,16,"Riverside, CA",,,bride
+Joe/Poppers ,Adult ,Male ,16,"San Bernardino, CA",,,bride
+Susan Marid ,Adult ,Female ,17,"San Bernardino, CA",,,bride
+Gary Marid ,Young Adult ,Male ,17,"San Bernardino, CA",,,bride
+Greg Marid ,Young adult ,Male,17,"San Bernardino, CA",,,bride
+John Killeen,young adult,male,18,"Plympton, MA",University of Massachusetts Dartmouth,marketer,groom
+Mike Killeen,young adult,male,18,"Plympton, MA",University of Massachusetts Dartmouth,electrician,groom
+Mae Killeen,young adult,female,18,"Plympton, MA",University of Massachusetts Dartmouth,journalist,groom
+Pat Killeen,adult,female,18,"Plympton, MA",,financialist,groom
+John Gallagher,young adult,male,19,"Canton, MA",Stonehill College,businessman,groom
+Matt Gallagher,teenager,male,19,"Halifax, MA",Bridgewater State University,journalist,groom
+Maria Gallagher,teenager,female,19,"Halifax, MA",,,groom
+Lucy Gallagher,adult,female,19,"Halifax, MA",,,groom
+Paul Gallagher,adult,male,19,"Halifax, MA",,,groom
+Scott Sauchuk,adult,female,20,"Plympton, MA",Salem State University,farmer,groom
+Oksana Sauchuk,adult,female,20,"Plympton, MA",,,groom
+Andrew Sauchuk,child,male,20,"Plympton, MA",,,groom
+Sophia Sauchuk,child,female,20,"Plympton, MA",,,groom
+Colton Smith,young adult,male,21,"Kingston, MA",University of Massachusetts Boston,doctor,groom
+Kelly Sun,young adult,female,21,"Los Angeles, CA",University of California Los Angeles,,bride
+Veronica Lu,young adult,female,21,"Santa Clara, CA",Santa Clara University,,bride
+Allison Schwedock,young adult,female,21,"Boston, MA",Boston University,,bride
+Jimmy McNeilly,young adult,male,22,"Beverly, MA",Salem State University,,groom
+Whitney Hatfield,young adult,female,22,"Beverly, MA",Salem State University,,groom
+Britney Chapman,young adult,female,23,"Beverly, MA",Northeastern University,,groom
+Fred Chapman,young adult,male,23,"Beverly, MA",Northeastern University,,groom
+Cameron Barbieri,young adult,male,24,"Danvers, MA",,,groom
+Shelly Barbieri,adult,female,25,"Danvers, MA",,,
+Samantha Barbieri,young adult,female,26,"Danvers, MA",Salem State University,,groom
+Costa Hatziioannou,young adult,male,26,"Danvers, MA",Salem State University,,groom
+Jacki Barbieri,young adult,female,27,"Danvers, MA",North Shore Community College,,groom
+Leiahna Barbieri,child,female,27,"Danvers, MA",,,groom
+Dante Barbieri,child,male,27,"Danvers, MA",,,groom
+RJ Barbieri,child,male,27,"Danvers, MA",,,groom
+Brigh Broderick,young adult,female,28,"Philadelphia, PA",Thomas Jefferson University,,bride
+Jill Pitman,adult,female,29,"Plympton, MA",University of Massachusetts Amherst,,groom
