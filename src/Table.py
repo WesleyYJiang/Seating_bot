@@ -126,5 +126,6 @@ class Table:
         result = ""
         for g in self.guests:
             result = result + ',' + g.name
-        return result
+
+        return result[1:]
 
