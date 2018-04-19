@@ -81,7 +81,7 @@ for i in range(10000):
             to_insert = True
     if to_insert == True:
         solutions.insert(work.p.info())
-        print("INSERTED:")
-        print(work.p.info()['Scores'])
+        # print("INSERTED:")
+        # print(work.p.info()['Scores'])
 
 print_solutions(solutions)
