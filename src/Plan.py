@@ -88,6 +88,7 @@ class Plan:
             guests.update({str(count): t.info()})
             count += 1
         result.update({"Scores": self.evaluate()})
+        result.update({"Dominated_by": 0})
         result.update({"Seating" : guests})
 
         return result

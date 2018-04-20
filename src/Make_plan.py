@@ -42,14 +42,9 @@ def compare_sol(plan1, plan2):
         if value < plan2[key]: result += 1
         if value > plan2[key]: result -= 1
         if value == plan2[key]: tie += 1
-    if result == len(plan1) or (result + tie == len(plan1) and result > 0): return "dominate"
+    if result == len(plan1) or (result > 0 and (result + tie == len(plan1))): return "dominate"
     if result <= 0: return "dominated"
     else: return "neither"
-
-def print_solutions(s):
-    print("*********************************FINAL Solutions****************************************")
-    for document in s.find():
-        print(document)
 
 def get_random_doc(coll):
     # coll refers to your collection
@@ -78,61 +73,48 @@ def get_optimal_sol(sols):
                 optimal = final
     return optimal
 
+def update_dominance(sols, sol_1):
+    for sol in sols.find():
+        decision = compare_sol(sol_1['Scores'], sol['Scores'])
+        if decision == "dominated": sol_1['Dominated_by'] += 1
+        if decision == 'dominate':
+            new = sol['Dominated_by']
+            id = sol['_id']
+            sols.update( {'_id': id}, { '$set' : {'Dominated_by' : new + 1}})
+
+def delete_sol(sol):
+    for s in sol.find():
+        if s['Dominated_by'] >= 10:
+            sol.delete_one(s)
+
 client = MongoClient()
 db = client.plans
 solutions = db.solutions
 og_plan = Plan(import_guests("DS4300-Final-Project-Example-Data.csv"), 3, 5,
                [Objective_gender(), Objective_age(), Objective_college(), Objective_connection(),
-                Objective_occupation(),Objective_party()])
+                Objective_occupation(), Objective_party()])
 solutions.delete_many({})
 solutions.insert(og_plan.info())
 work = Working_agent(og_plan)
 
-# takes a random solution from the database
-# swap
-# store in database
-# delete dominated solutions occasionally
-
-for i in range(10000):
-    # random select document for db
+term = 0
+i = 0
+while term < 1000:
     random_sol = get_random_doc(solutions)
     plan = og_plan.update_seats(random_sol['Seating'])
     w = Working_agent(plan)
     w.random_swap()
     sol_1 = w.p.info()
+    update_dominance(solutions, sol_1)
+    if sol_1['Dominated_by'] != 0: term += 1
+    if sol_1['Dominated_by'] == 0: term = 0
     solutions.insert(sol_1)
-    #if i % 100 == 0: print(i)
 
+    if i % 1000 == 0:
+        delete_sol(solutions)
+        print(i)
+    i += 1
 sols = get_optimal_sol(solutions)
-for s in sols: print(s)
-
-#     # store solution
-# for i in range(100):
-#     # print("****************************ROUND***************************")
-#     # for document in solutions.find():
-#     #     print(document['Scores'])
-#     work.random_swap()
-#     sol_1 = work.p.info()['Scores']
-#     to_insert = False
-#     # print("CHECK:")
-#     # print(sol_1)
-#     for sol in solutions.find():
-#         sol_2 = sol['Scores']
-#         decision = compare_sol(sol_1, sol_2)
-#         # print("Compare: " + decision)
-#         if decision == "dominated":
-#             to_insert = False
-#             break
-#         if decision == "dominate":
-#             solutions.delete_one(sol)
-#             # print("DELETED: ")
-#             # print(sol['Scores'])
-#             to_insert = True
-#         if decision == "neither":
-#             to_insert = True
-#     if to_insert == True:
-#         solutions.insert(work.p.info())
-#         # print("INSERTED:")
-#         # print(work.p.info()['Scores'])
-#
-# print_solutions(solutions)
+for s in sols:
+    s.pop("Dominated_by")
+    print(s)
