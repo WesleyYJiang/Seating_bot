@@ -7,6 +7,13 @@ class Roster(object):
         self.guest_list = guest_list
         self.sortGuestList()
         self.parties = self.getParties()
+        self.guests_map = self.getMap()
+
+    def getMap(self):
+        m = {}
+        for g in self.guest_list:
+            m.update({g.name : g})
+        return m
 
     def swapRandom(self):
         idx = range(len(self.guest_list))
@@ -32,3 +39,6 @@ class Roster(object):
         for g in self.guest_list:
             map[g.party].append(g)
         return map
+
+    def convert(self, name):
+        return self.guests_map[name]

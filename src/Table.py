@@ -21,6 +21,9 @@ class Table:
         self.size = 0
         self.guests = []
 
+    def update(self, list_of_guests):
+        self.guests = list_of_guests
+        self.size = len(list_of_guests)
 
     def addGuest(self, guest):
         """Adds a guest to the table

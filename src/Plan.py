@@ -22,6 +22,15 @@ class Plan:
         self.scores = {}
         self.assign_by_party()
 
+    def update_seats(self, seats):
+        for i in range(len(seats)):
+            gs = seats[str(i)].split(",")
+            guests = []
+            for g in gs:
+                guests.append(self.roster.convert(g))
+            self.tables[i].update(guests)
+        return self
+
     def createTables(self, num_t, t_cap):
         """Initialize a list of tables with a given number of tables and capacity per table
         
