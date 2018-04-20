@@ -30,7 +30,6 @@ class TestingTables(unittest.TestCase):
 
     def test_import_guests_leah_tim(self):
         ex2 = import_guests('tim_leah_guests.csv')
-        print([i.age for i in ex2.guest_list])
         self.assertEqual(len(ex2.guest_list), 81)
         self.assertEqual(type(ex2), Roster)
         self.assertEqual(type(ex2.guest_list[0]), Guest)
@@ -39,7 +38,6 @@ class TestingTables(unittest.TestCase):
         ex2 = import_guests('DS4300-Final-Project-Example-Data.csv')
         p = [i.party for i in ex2.guest_list]
         self.assertEqual(len(p), 19)
-        print(p)
         self.assertEqual(type(p[0]), int)
 
     def test_assign_by_party(self):
