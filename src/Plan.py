@@ -22,6 +22,7 @@ class Plan:
         self.scores = {}
         self.assign_by_party()
 
+
     def update_seats(self, seats):
         for i in range(len(seats)):
             gs = seats[str(i)].split(",")
@@ -92,4 +93,3 @@ class Plan:
         result.update({"Seating" : guests})
 
         return result
-

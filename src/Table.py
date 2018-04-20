@@ -72,11 +72,19 @@ class Table:
 
     def party_score(self):
         """returns the party_score for the table
-
-        :return: the square of the number of parties at the table
         """
+
         parties = [i.party for i in self.guests]
-        return math.pow(len(set(parties)),2)
+        counter = 0
+        for i in range(len(parties)):
+
+            left = parties[(i-1) % self.size]
+            right = parties[(i-1) % self.size]
+            if parties[i] == left and parties[i] == right:
+                counter -= 1
+            elif not parties[i] in [left, right]:
+                counter += 1
+        return counter
 
     def college_score(self):
         """returns the college_score for the table

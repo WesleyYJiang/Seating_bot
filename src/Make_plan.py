@@ -100,7 +100,7 @@ work = Working_agent(og_plan)
 term = 0
 i = 0
 #while term < 1000:
-for i in range(100000):
+for i in range(10000):
     random_sol = get_random_doc(solutions)
     plan = og_plan.update_seats(random_sol['Seating'])
     w = Working_agent(plan)
