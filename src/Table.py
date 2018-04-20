@@ -106,27 +106,18 @@ class Table:
 
         # calculate score for boy_girl Objective
     def connection_score(self):
-        """returns the connection score for the table
-
-        :return: the number of guests at the table that are sitting next to someone who has the same connection
+        """return: the number of guests at the table that are sitting next to someone who has the same connection
         """
         connections = [i.connection for i in self.guests]
         counter = 0
         for i in range(len(connections)):
-            if (i == len(connections) - 1):
-                if((connections[i-1]=='both' and connections[i] == 'both') or
-                        (connections[i] == 'both' and connections[0] == 'both')):
-                    counter -= 1
-                if not(connections[i] == connections[0] or connections[i - 1] == connections[i]
-                        or connections[0] == 'both' or connections[i] == 'both' or connections[i-1] == 'both'):
-                    counter += 1
-            else:
-                if((connections[i-1] == 'both' and connections[i] == 'both') or
-                  (connections[i] == 'both' and connections[i+1] == 'both')):
-                    counter -= 1
-                if not(connections[i] == connections[i + 1] or connections[i - 1] == connections[i]
-                        or connections[i-1] == 'both' or connections[i] == 'both' or connections[i+1] == 'both'):
-                    counter += 1
+
+            left = connections[(i - 1) % self.size]
+            right = connections[(i - 1) % self.size]
+            if connections[i] == left and connections[i] == right:
+                counter -= 1
+            elif not connections[i] in [left, right]:
+                counter += 1
         return counter
 
     def info(self):
