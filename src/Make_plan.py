@@ -22,6 +22,13 @@ def import_guests(path):
     df = pandas.read_csv(path)
     guests = []
     for index, row in df.iterrows():
+        rowNew = []
+        for i in row:
+            if(type(i) == str):
+                rowNew.append(i.lower())
+            else:
+                rowNew.append(i)
+        row = rowNew
         g = Guest(row[0], row[1], row[2], row[3], row[4], row[5],
                   row[6], row[7])
         guests.append(g)

@@ -72,7 +72,7 @@ class Plan:
         for g in self.roster.guest_list:
             for t in random.shuffle(self.tables):
                 table = self.tables[t]
-                if table.is_full():
+                if not table.is_full():
                     table.addGuest(g)
                     break
 

@@ -1,5 +1,6 @@
 import numpy as np
 import math
+import pandas as pd
 
 class Table:
     """Represents all seats and people at a table
@@ -11,7 +12,7 @@ class Table:
     """
 
     def __init__(self, capacity):
-        """Adds a guest to the tabble
+        """Adds a guest to the table
 
             param guest: The guest to be added to this table 
         """
@@ -49,8 +50,9 @@ class Table:
 
         :return: the square of the number of age groups at the table
         """
-        ages = [i.age for i in self.guests]
-        return np.float64(math.pow(len(set(ages)),2))
+        ages = [i.age for i in self.guests if not pd.isnull(i.age)]
+        numNulls = len([i for i in self.guests if pd.isnull(i.age)])
+        return math.pow(len(set(ages)) + numNulls, 2)
 
     # calculate score for boy_girl Objective
     def boy_girl(self):
@@ -81,16 +83,18 @@ class Table:
 
         :return: the number of unique colleges attended at the table
         """
-        colleges = [i.college for i in self.guests]
-        return math.pow(len(set(colleges)),2)
+        colleges = [i.age for i in self.guests if not pd.isnull(i.college)]
+        numNulls = len([i for i in self.guests if pd.isnull(i.college)])
+        return math.pow(len(set(colleges)) + numNulls, 2)
 
     def occupation_score(self):
         """returns the occupation_score for the table
 
         :return: the number of unique occupations attended at the table
         """
-        occupations = [i.occupation for i in self.guests]
-        return math.pow(len(set(occupations)),2)
+        occupations = [i.occupation for i in self.guests if not pd.isnull(i.occupation)]
+        numNulls = len([i for i in self.guests if pd.isnull(i.occupation)])
+        return math.pow(len(set(occupations)) + numNulls,2)
 
         # calculate score for boy_girl Objective
     def connection_score(self):
