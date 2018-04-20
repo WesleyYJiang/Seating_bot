@@ -90,7 +90,7 @@ def delete_sol(sol):
 client = MongoClient()
 db = client.plans
 solutions = db.solutions
-og_plan = Plan(import_guests("DS4300-Final-Project-Example-Data.csv"), 3, 5,
+og_plan = Plan(import_guests("tim_leah_guests.csv"), 14, 6,
                [Objective_gender(), Objective_age(), Objective_college(), Objective_connection(),
                 Objective_occupation(), Objective_party()])
 solutions.delete_many({})
