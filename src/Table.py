@@ -50,9 +50,17 @@ class Table:
 
         :return: the square of the number of age groups at the table
         """
+        ageValues = {'child':0, 'teenager':1, 'young adult':2, 'adult':3, 'senior':4, np.nan: 5}
         ages = [i.age for i in self.guests if not pd.isnull(i.age)]
-        numNulls = len([i for i in self.guests if pd.isnull(i.age)])
-        return math.pow(len(set(ages)) + numNulls, 2)
+        newAges = [ageValues[i] for i in ages]
+        counter = 0
+        for i in range(len(newAges)):
+
+            left = newAges[(i - 1) % self.size]
+            right = newAges[(i - 1) % self.size]
+            counter += abs(left - newAges[i])
+            counter += abs(right - newAges[i])
+        return counter
 
     # calculate score for boy_girl Objective
     def boy_girl(self):

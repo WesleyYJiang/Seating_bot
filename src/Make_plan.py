@@ -25,7 +25,7 @@ def import_guests(path):
         rowNew = []
         for i in row:
             if(type(i) == str):
-                rowNew.append(i.lower())
+                rowNew.append(i.lower().rstrip())
             else:
                 rowNew.append(i)
         row = rowNew
@@ -100,7 +100,7 @@ work = Working_agent(og_plan)
 term = 0
 i = 0
 #while term < 1000:
-for i in range(100000):
+for i in range(5000):
     random_sol = get_random_doc(solutions)
     plan = og_plan.update_seats(random_sol['Seating'])
     w = Working_agent(plan)
