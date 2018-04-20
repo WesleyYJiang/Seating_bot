@@ -15,7 +15,7 @@ from pymongo import MongoClient
 from src.Work_agent import Working_agent
 import json
 import random
-
+import matplotlib.pyplot as plt
 
 # import Guests from csv
 def import_guests(path):
@@ -87,6 +87,20 @@ def delete_sol(sol):
         if s['Dominated_by'] >= 10:
             sol.delete_one(s)
 
+def throw_bad_sol(sol):
+    op = get_optimal_sol(sol)
+    random_sol = get_random_doc(solutions)
+    bad = []
+    length = 0
+    for s in sol.find():
+        if length == len(op): break
+        if s not in op:
+            bad.append(s)
+        else: length += 1
+
+    for s in range(int(len(bad)/2)):
+        sol.delete_one(bad[random.randint(0, len(bad) - 1)])
+
 client = MongoClient()
 db = client.plans
 solutions = db.solutions
@@ -100,22 +114,49 @@ work = Working_agent(og_plan)
 term = 0
 i = 0
 #while term < 1000:
-for i in range(5000):
+for i in range(100000):
     random_sol = get_random_doc(solutions)
     plan = og_plan.update_seats(random_sol['Seating'])
     w = Working_agent(plan)
     w.random_swap()
     sol_1 = w.p.info()
-    update_dominance(solutions, sol_1)
-    if sol_1['Dominated_by'] != 0: term += 1
-    if sol_1['Dominated_by'] == 0: term = 0
+    # update_dominance(solutions, sol_1)
+    # if sol_1['Dominated_by'] != 0: term += 1
+    # if sol_1['Dominated_by'] == 0: term = 0
     solutions.insert(sol_1)
 
     if i % 1000 == 0:
-        delete_sol(solutions)
+        throw_bad_sol(solutions)
+        # delete_sol(solutions)
         print(i)
     i += 1
 sols = get_optimal_sol(solutions)
 for s in sols:
     s.pop("Dominated_by")
     print(s)
+
+party =[]
+age = []
+gender = []
+for s in sols:
+    party.append(s['Scores']['party'])
+    age.append(s['Scores']['age'])
+    gender.append(s['Scores']['gender'])
+
+plt.scatter(party, age)
+plt.xlabel('Party')
+plt.ylabel('Age')
+plt.title('Party vs Age')
+plt.show()
+
+plt.scatter(gender, age)
+plt.xlabel('Gender')
+plt.ylabel('Age')
+plt.title('Gender vs Age')
+plt.show()
+
+plt.scatter(party, gender)
+plt.xlabel('Party')
+plt.ylabel('Gender')
+plt.title('Party vs Gender')
+plt.show()
